@@ -4,10 +4,13 @@ def split_before_each_uppercases(formula):
     
     split_formula = []
     start = 0
+
     for end in range(1, len(formula)):
         if formula[end].isupper():
             split_formula.append(formula[start:end])
             start = end
+
+    # אחרי הלולאה נוסיף את החלק האחרון
     split_formula.append(formula[start:])
     return split_formula
 
@@ -18,4 +21,4 @@ def split_at_first_digit(formula):
             prefix = formula[:i]
             numeric_part = int(formula[i:])
             return prefix, numeric_part
-    return formula, 1
+    return formula, 1
